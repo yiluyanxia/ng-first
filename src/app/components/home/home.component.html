@@ -1,0 +1,14 @@
+<h3>
+  {{msg}}
+</h3>
+<p>{{username}}</p>
+<button (click)='getMsg()' >点我试试</button><br>
+<button (click)='setName()'>点我改值</button>
+<br>
+<div *ngIf="flag">flag=true时显示</div>
+<button (click)='flag=!flag'>点我改flag</button>
+<hr>
+<br>
+<h3>双向数据</h3>
+<input type="text" [(ngModel)]="search" />
+{{search}}

@@ -1,0 +1,38 @@
+<p>
+  这是一个新闻组件
+</p>
+<h3>绑定数据</h3>
+{{title}}
+{{msg}}
+<br>
+{{username}}
+<br>
+{{student}}
+<hr><br>
+<h3>绑定属性</h3>
+<p title="{{nTitle}}">鼠标放上来</p>
+<p [title]="nTitle">鼠标放上来</p>
+<hr><br>
+<h3>绑定html</h3>
+<div [innerHtml]="nTemp"></div>
+<hr><br>
+<h3>获取对象</h3>
+{{obj.name}}
+<hr><br>
+<h3>循环数据</h3>
+<ul>
+  <li *ngFor="let item of list;let key = index">{{key}} : {{item}}</li>
+</ul>
+
+<ul>
+  <li template="ngFor let item of list;let key = index">{{key}} : {{item}}</li>
+</ul>
+<br>
+<br>
+<ul>
+  <li *ngFor="let item of list2;let key = index">{{key}} : {{item.cate}}
+    <ol>
+      <li *ngFor="let child of item.list">{{child.title}}</li>
+    </ol>
+  </li>
+</ul>
