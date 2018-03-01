@@ -1,1 +1,21 @@
-<!-- <input -->
+<input type="text" [(ngModel)]='todo'
+(keydown)='addTodo($event)'>
+<button (click)='addData()'>Add</button>
+<h3>新增代办事项</h3>
+
+<ul>
+  <li *ngFor="let item of list;let key = index" [hidden]="item.status == 0">
+    <button (click)="changeTodo(key)">完成了</button>
+    {{item.status}}--- {{item.todo}}------
+    <button (click)="deleteData(key)">删除</button>
+  </li>
+</ul>
+
+<h3>已完成事项</h3>
+<ul>
+    <li *ngFor="let item of list;let key = index" [hidden]="item.status == 1">
+        <button (click)="changeTodo(key)">完成了</button>
+        {{item.status}}--- {{item.todo}}------
+        <button (click)="deleteData(key)">删除</button>
+      </li>
+</ul>
