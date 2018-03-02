@@ -1,0 +1,59 @@
+<!-- <input type="text" [(ngModel)]='todo'
+(keydown)='addTodo($event)'>
+<button (click)='addData()'>Add</button>
+<h3>新增代办事项</h3>
+
+<ul>
+  <li *ngFor="let item of list;let key = index" [hidden]="item.status == 0">
+    <button (click)="changeTodo(key,0)">完成了</button>
+    {{item.status}}--- {{item.todo}}------
+    <button (click)="deleteData(key)">删除</button>
+  </li>
+</ul>
+
+<h3>已完成事项</h3>
+<ul>
+    <li *ngFor="let item of list;let key = index" [hidden]="item.status == 1">
+        <button (click)="changeTodo(key,1)">完成了</button>
+        {{item.status}}--- {{item.todo}}------
+        <button (click)="deleteData(key)">删除</button>
+      </li>
+</ul> -->
+
+<header>
+  <section>
+    
+    <label for="title">ToDoList</label>
+    <!-- <input type="text" [(ngModel)]='todo'
+(keydown)='addTodo($event)'> -->
+    <input type="text" [(ngModel)]='todo'
+    (keydown)='addTodo($event)' placeholder="添加ToDo"/>
+ 
+  </section>
+</header>
+<section>
+  <h2 onclick="save()">正在进行
+    <span>{{todoCount}}</span>
+  </h2>
+  <ol class="demo-box">
+    <li *ngFor="let item of list;let key = index" [hidden]="item.done == true">
+      <input type="checkbox" (click)="changeTodo(key,true)" checked="false">
+      <p>{{item.todo}}</p>
+      <a (click)="deleteData(key)">-</a>
+    </li>
+  </ol>
+  <h2>已经完成
+    <span>{{doneCount}}</span>
+  </h2>
+  <ul>
+    <li *ngFor="let item of list;let key = index" [hidden]="item.done == false">
+      <input type="checkbox" (click)="changeTodo(key,false)" checked='checked'>
+      <p>{{item.todo}}</p>
+      <a (click)="deleteData(key)">-</a>
+    </li>
+  </ul>
+</section>
+<footer>
+  Copyright &copy; 2014 todolist.cn
+  <a (click)="clearData()">clear</a>
+</footer>
