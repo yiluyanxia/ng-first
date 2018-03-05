@@ -10,7 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 
 import { StorageService } from './services/storage.service';
-import { HttpChunkComponent } from './components/http-chunk/http-chunk.component'
+import { HttpChunkComponent } from './components/http-chunk/http-chunk.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpChunkComponent } from './components/http-chunk/http-chunk.component
     NewsComponent,
     HomeComponent,
     TodolistComponent,
-    HttpChunkComponent
+    HttpChunkComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

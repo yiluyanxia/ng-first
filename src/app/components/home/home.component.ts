@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public msg:any;
   public username:any;
+  public msgFromHome;
   flag = true;
 
   public search:any;
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.msg = "this is home component";
     this.username = "kris wu";
     this.search = "请输入";
+    this.msgFromHome="好热"
    }
 
   ngOnInit() {
@@ -27,6 +29,13 @@ export class HomeComponent implements OnInit {
   }
   setName(){
     this.username = "key"
+  }
+  run(){
+    alert("this is from home's event.")
+  }
+
+  getDataFromChild(childData){
+    alert("从事件中接收子组件的数据"+childData)
   }
 
 }

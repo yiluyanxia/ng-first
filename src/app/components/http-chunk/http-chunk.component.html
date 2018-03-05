@@ -1,3 +1,13 @@
-<p>
-  http-chunk works!
-</p>
+<app-header (toparent)="getList($event)"></app-header>
+<br>
+<hr>
+<br>
+
+<button (click)="getList()">点我</button>
+<button (click)="getListByJsonp()">getListByJsonp点我</button>
+<button (click)="getListByRxjs()">getListByRxjs点我</button>
+<button (click)="getListByRxjs()">getListByJsonpRxjs点我</button>
+
+<div>
+  {{list}}
+</div>
