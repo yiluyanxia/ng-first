@@ -1,4 +1,6 @@
-<app-header [msg]="msg"></app-header>
+<app-header [msg]="msg" #header></app-header>
+<button (click)="header.childToParent()">父组件home的按钮</button>
+<button (click)="getChildToParent()">通过方法获取子组件的数据</button>
 <br>
 <br>
 <br>

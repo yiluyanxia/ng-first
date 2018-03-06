@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   flag = true;
 
   public search:any;
-
+  @ViewChild('header') headerChild; //'header'就是在html里的定义的名字。
   constructor() {
     this.msg = "this is home component";
     this.username = "kris wu";
@@ -36,6 +36,12 @@ export class HomeComponent implements OnInit {
 
   getDataFromChild(childData){
     alert("从事件中接收子组件的数据"+childData)
+  }
+  //通过方法获取子组件的数据
+  getChildToParent(){
+    this.headerChild.childToParent();
+    alert(this.headerChild.childVal);
+    this.headerChild.childVal="父组件改变了子组件的值"
   }
 
 }
